@@ -1,4 +1,15 @@
-const hs = require('.')(require('hyperscript'))
+# hyperscript-nested-contexts
+
+Hyperscript's `context()` function returns an object that implements the hyperscript API, but it misses a `context()` function itself. This module fixes this.
+
+```
+require('hyperscript').context().conext()
+```
+
+## Example
+
+```
+const hs = require('hyperscript-nested-contexts')(require('hyperscript'))
 const ho = require('hyperobj')
 const observable = require('observable')
 
@@ -33,6 +44,6 @@ const render = ho(
 document.body.appendChild(
   render(require('./package.json'))
 )
-document.body.appendChild(hs('style', `
-  span {padding: .1em;}
-`))
+```
+
+(Clicking on a parent will remove event handlers and observables from children)

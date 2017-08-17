@@ -1,17 +1,23 @@
 {
-  "name": "hyperobj-context",
+  "name": "hyperscript-nested-contexts",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create hyperscript contexts within hyperscript contexts and clean them up properly",
   "main": "index.js",
+  "devDependencies": {
+    "hyperobj": "^1.0.2",
+    "hyperscript": "^2.0.2",
+    "budo": "^10.0.4",
+    "observable": "^2.1.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "hyperscript",
+    "context",
+    "nesting",
+    "nested"
+  ],
   "author": "Jan Bölsche <jan@lagomorph.de> (http://regular.codes)",
-  "license": "MIT",
-  "devDependencies": {
-    "budo": "^10.0.4",
-    "hyperobj": "^1.0.2",
-    "hyperscript": "^2.0.2",
-    "observable": "^2.1.4"
-  }
+  "license": "MIT"
 }
