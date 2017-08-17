@@ -1,0 +1,17 @@
+{
+  "name": "hyperobj-context",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jan Bölsche <jan@lagomorph.de> (http://regular.codes)",
+  "license": "MIT",
+  "devDependencies": {
+    "budo": "^10.0.4",
+    "hyperobj": "^1.0.2",
+    "hyperscript": "^2.0.2",
+    "observable": "^2.1.4"
+  }
+}
