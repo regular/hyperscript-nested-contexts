@@ -19,5 +19,14 @@
     "nested"
   ],
   "author": "Jan Bölsche <jan@lagomorph.de> (http://regular.codes)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/regular/hyperscript-nested-contexts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/regular/hyperscript-nested-contexts/issues"
+  },
+  "homepage": "https://github.com/regular/hyperscript-nested-contexts#readme"
 }
