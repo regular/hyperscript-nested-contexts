@@ -2,26 +2,37 @@ const hs = require('hyperscript')
 const ho = require('hyperobj')
 const observable = require('observable')
 
+function cleanup(h) {
+  (h.nestedContexts || []).forEach(cleanup)
+  h.cleanup()
+}
+
+function context(h) {
+  let nh = hs.context()
+  h.nestedContexts = (h.nestedContexts || [])
+  h.nestedContexts.unshift(nh)
+  return nh
+}
+
 const render = ho(
   function(v) {
     if (typeof v!=='object') return
     const h = this.ctx || hs
-    console.log('context:', h.n)
     return h('ol',
       Object.keys(v).map( (k)=> {
         const msg = observable()
         return (function(h) {
-          msg('ctx'+h.n)
+          msg('ctx')
           return h('li', [
             h('em.key', h('span', msg), this.call(this, k), {
               onclick: function() {
                 msg('clicked')
-                h.cleanup()
+                cleanup(h)
               }
             }),
             h('span.value', this.call(this, v[k], k))
           ])
-        }).call(this, this.ctx = Object.assign(h.context(), {context: h.context.bind(h), n: h.n ? h.n+1: 1}))
+        }).call(this, this.ctx = context(h))
       })
     )
   },
